@@ -3,9 +3,9 @@ import AccordionItem from '../sections/AccordionItem';
 
     const WhereToMeetContent = () => (
         <>
-        <div className="w-[708px] h-[480px] rounded-xl overflow-hidden relative">
+        <div className="w-full lg:w-[708px] h-[300px] lg:h-[480px] rounded-xl overflow-hidden relative">
 
-            <div className="absolute -top-[45px] -left-[64px] w-full h-full">
+            <div className="absolute w-full h-full lg:-top-[45px] lg:-left-[64px]">
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.894396264875!2d115.26127161539493!3d-8.51065609386345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f5b75b92573%3A0x5e52c85b5420b985!2sUbud%2C%20Gianyar%2C%20Bali%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1664123456789!5m2!1sen!2sus"
                 width="100%"

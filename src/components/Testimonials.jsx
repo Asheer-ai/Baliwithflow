@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
-// Import the new TestimonialCard component
+
 import TestimonialCard from '../sections/TestimonialCard';
 
 const testimonialsData = [

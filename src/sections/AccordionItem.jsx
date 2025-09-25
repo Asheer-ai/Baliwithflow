@@ -4,7 +4,7 @@ import { FiPlus, FiMinus } from 'react-icons/fi';
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
     return (
-        <div className="w-1/2 border-b border-gray-200 py-2">
+        <div className="lg:w-1/2 w-full border-b border-gray-200 py-2">
             <button
                 onClick={onClick}
                 className="flex justify-between items-center w-full py-4 text-left"
@@ -16,7 +16,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
             </button>
 
             {isOpen && (
-                <div className="pb-4 pr-8 text-gray-600 space-y-4">
+                <div className="pb-4 pr-4 lg:pr-8 text-gray-600 space-y-4">
                     {content}
                 </div>
             )}

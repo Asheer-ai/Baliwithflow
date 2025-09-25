@@ -48,7 +48,7 @@ function Navbar() {
         <div className="md:hidden absolute top-full left-0 w-full bg-bali-beige shadow-lg z-10">
           <div className="flex flex-col items-center space-y-4 py-8">
             <a href="#" className="text-black text-lg">Home</a>
-            <a href="ExperienceDetails" className="text-black text-lg">Experiences</a>
+            <a href="#ExperienceDetails" className="text-black text-lg">Experiences</a>
             <a href="#DiscoverCulture" className="text-black text-lg">Guide</a>
             <a href="#Suggestions" className="text-black text-lg">Itineraries</a>
             <a href="#AdditionalInfo" className="text-black text-lg">FAQ</a>
