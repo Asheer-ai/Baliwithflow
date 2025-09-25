@@ -1,16 +1,55 @@
-# React + Vite
+# 🌴 Baliwithflow - Travel Experience Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive, single-page travel website designed to showcase unique cultural experiences in Bali.  
+This project was built from the ground up based on a series of Figma designs, focusing on a clean, modern aesthetic and a component-based architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Component-Based Architecture**: Every section of the site is a reusable React component.  
+- **Fully Responsive Design**: A mobile-first approach ensures a seamless experience on all devices, from phones to desktops.  
+- **Interactive UI Elements**:
+  - Responsive Navbar with a collapsible mobile menu  
+  - Interactive Calendar (`react-day-picker`) for selecting available dates  
+  - Accordion component for neatly displaying additional information  
+- **Dynamic Content**: Sections like testimonials and suggestions are data-driven, making them easy to update.  
+- **Custom Styling**: Styled with **Tailwind CSS**, using a custom theme to match the Figma design's color palette and typography.  
+- **Smooth Scrolling Navigation**: Single-page navigation with smooth scroll effects.  
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework**: React (bootstrapped with Vite)  
+- **Styling**: Tailwind CSS  
+- **Icons**: React Icons  
+- **Calendar**: React DayPicker & date-fns  
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally for development and testing.
+
+### Prerequisites
+- Install [Node.js](https://nodejs.org/) and npm on your computer.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/baliwithflow-website.git
+   ```
+2.Navigate to the project directory:
+  ```bash
+   cd Baliwithflow
+   ```
+3.Install dependencies:
+   ```bash
+   npm install  react-icons react-day-picker date-fns
+   ```
+4.Start the development server:
+  ```bash
+   npm run dev
+   ```
