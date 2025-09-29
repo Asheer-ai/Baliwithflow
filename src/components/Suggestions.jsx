@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaMapMarkerAlt, FaRegClock, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 
 const tagStyles = {
@@ -44,6 +44,19 @@ const suggestionsData = [
 ];
 
 const Suggestions = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = 360 + 32; // card width + gap
+      if (direction === 'left') {
+        scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -51,7 +64,10 @@ const Suggestions = () => {
           You may also like
         </h2>
 
-        <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide"
+        >
           {suggestionsData.map((card, index) => (
             <div
               key={index}
@@ -105,10 +121,16 @@ const Suggestions = () => {
         </div>
         
         <div className="flex justify-center gap-4 mt-12">
-          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+          <button 
+            onClick={() => scroll('left')}
+            className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors"
+          >
             <FaLongArrowAltLeft size={34}/>
           </button>
-          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+          <button 
+            onClick={() => scroll('right')}
+            className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors"
+          >
             <FaLongArrowAltRight size={34}/>
           </button>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 import TestimonialCard from '../sections/TestimonialCard';
 
@@ -27,6 +27,21 @@ const testimonialsData = [
 ];
 
 const Testimonials = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const cardWidth = 320; // approximate width of each card including margin
+      const gap = 32; // gap between cards
+      const scrollAmount = cardWidth + gap;
+
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section className="bg-bali-beige py-24 px-8">
       <div className="max-w-6xl mx-auto text-center">
@@ -37,27 +52,39 @@ const Testimonials = () => {
           See how escapees from around the world experienced the real Bali — curated with care, heart, and local soul.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 text-left">
+        {/* Slider container */}
+        <div
+          ref={scrollRef}
+          className="flex gap-8 mt-12 overflow-x-auto scrollbar-hide scroll-smooth"
+        >
           {testimonialsData.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              rating={testimonial.rating}
-              text={testimonial.text}
-              avatar={testimonial.avatar}
-              name={testimonial.name}
-              title={testimonial.title}
-              className="transition-transform hover:scale-105" 
-              avatarProps={{ loading: 'lazy', width: 80, height: 80 }} 
-            />
+            <div key={index} className="flex-shrink-0 w-[320px] text-left">
+              <TestimonialCard
+                rating={testimonial.rating}
+                text={testimonial.text}
+                avatar={testimonial.avatar}
+                name={testimonial.name}
+                title={testimonial.title}
+                className="transition-transform hover:scale-105"
+                avatarProps={{ loading: 'lazy', width: 80, height: 80 }}
+              />
+            </div>
           ))}
         </div>
 
+        {/* Slider buttons */}
         <div className="flex gap-[10px] mt-12 justify-center">
-          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-            <FaLongArrowAltLeft size={34}/>
+          <button
+            onClick={() => scroll('left')}
+            className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors"
+          >
+            <FaLongArrowAltLeft size={34} />
           </button>
-          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-            <FaLongArrowAltRight size={34}/>
+          <button
+            onClick={() => scroll('right')}
+            className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors"
+          >
+            <FaLongArrowAltRight size={34} />
           </button>
         </div>
       </div>
