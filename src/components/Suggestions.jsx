@@ -61,7 +61,7 @@ const Suggestions = () => {
                   <span className="w-2 h-2 bg-white/50 rounded-full"></span>
                   <span className="w-2 h-2 bg-white/50 rounded-full"></span>
                 </div>
-              </div>
+              </div> 
 
               <div className="p-6 flex flex-col gap-3">
                 
