@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
-
 import TestimonialCard from '../sections/TestimonialCard';
 
 const testimonialsData = [
@@ -32,11 +31,12 @@ const Testimonials = () => {
     <section className="bg-bali-beige py-24 px-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-nav text-5xl font-bold text-[#384B40]">
-          What our escapees says about us
+          What our escapees say about us
         </h2>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
           See how escapees from around the world experienced the real Bali — curated with care, heart, and local soul.
         </p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 text-left">
           {testimonialsData.map((testimonial, index) => (
             <TestimonialCard
@@ -46,16 +46,19 @@ const Testimonials = () => {
               avatar={testimonial.avatar}
               name={testimonial.name}
               title={testimonial.title}
+              className="transition-transform hover:scale-105" 
+              avatarProps={{ loading: 'lazy', width: 80, height: 80 }} 
             />
           ))}
         </div>
-        <div className="flex gap-[10px] mt-12">
-            <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-                <FaLongArrowAltLeft size={34}/>
-            </button>
-              <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-                <FaLongArrowAltRight size={34}/>
-              </button>
+
+        <div className="flex gap-[10px] mt-12 justify-center">
+          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+            <FaLongArrowAltLeft size={34}/>
+          </button>
+          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+            <FaLongArrowAltRight size={34}/>
+          </button>
         </div>
       </div>
     </section>

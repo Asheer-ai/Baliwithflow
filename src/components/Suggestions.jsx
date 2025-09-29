@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaRegClock, FaUserFriends, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaRegClock, FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 
 const tagStyles = {
   dark: 'bg-[#384B40] text-white',
@@ -53,9 +53,19 @@ const Suggestions = () => {
 
         <div className="flex gap-8 overflow-x-auto pb-8 scrollbar-hide">
           {suggestionsData.map((card, index) => (
-            <div key={index} className="flex-shrink-0 w-[360px] bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div
+              key={index}
+              className="flex-shrink-0 w-[360px] bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105"
+            >
               <div className="relative">
-                <img src={card.images[0]} alt={card.title} className="w-full h-60 object-cover" />
+                <img
+                  src={card.images[0]}
+                  alt={card.title}
+                  className="w-full h-60 object-cover"
+                  loading="lazy"
+                  width={360}
+                  height={240}
+                />
                 <div className="absolute bottom-4 left-1/2 -translate-x-12 flex gap-2">
                   <span className="w-2 h-2 bg-white rounded-full"></span>
                   <span className="w-2 h-2 bg-white/50 rounded-full"></span>
@@ -64,8 +74,7 @@ const Suggestions = () => {
               </div> 
 
               <div className="p-6 flex flex-col gap-3">
-                
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {card.tags.map((tag, i) => (
                     <span 
                       key={i} 
@@ -96,12 +105,12 @@ const Suggestions = () => {
         </div>
         
         <div className="flex justify-center gap-4 mt-12">
-            <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-              <FaLongArrowAltLeft size={34}/>
-            </button>
-            <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
-              <FaLongArrowAltRight size={34}/>
-            </button>
+          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+            <FaLongArrowAltLeft size={34}/>
+          </button>
+          <button className="w-[125px] h-[56.5px] bg-white border-[3px] border-[#384B40] rounded-full flex items-center justify-center text-[#384B40] hover:bg-[#384B40] hover:text-white transition-colors">
+            <FaLongArrowAltRight size={34}/>
+          </button>
         </div>
       </div>
     </section>
