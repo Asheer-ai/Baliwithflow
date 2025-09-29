@@ -10,7 +10,7 @@ const highlightsData = [
     image: '/Pic3.png',
     caption: 'Visit a local temple',
   },
-  // You can add more highlights here
+  
 ];
 
 const Highlights = () => {
@@ -18,8 +18,8 @@ const Highlights = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const cardWidth = 318; // width of each highlight card
-      const gap = 42; // gap between cards (adjust based on your layout)
+      const cardWidth = 318; 
+      const gap = 42; 
       const scrollAmount = cardWidth + gap;
 
       scrollRef.current.scrollBy({

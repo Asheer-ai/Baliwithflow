@@ -48,7 +48,7 @@ const Suggestions = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 360 + 32; // card width + gap
+      const scrollAmount = 360 + 32; 
       if (direction === 'left') {
         scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {

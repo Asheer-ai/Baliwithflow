@@ -31,8 +31,8 @@ const Testimonials = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const cardWidth = 320; // approximate width of each card including margin
-      const gap = 32; // gap between cards
+      const cardWidth = 320; 
+      const gap = 32; 
       const scrollAmount = cardWidth + gap;
 
       scrollRef.current.scrollBy({
@@ -52,7 +52,6 @@ const Testimonials = () => {
           See how escapees from around the world experienced the real Bali — curated with care, heart, and local soul.
         </p>
 
-        {/* Slider container */}
         <div
           ref={scrollRef}
           className="flex gap-8 mt-12 overflow-x-auto scrollbar-hide scroll-smooth"
@@ -72,7 +71,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Slider buttons */}
         <div className="flex gap-[10px] mt-12 justify-center">
           <button
             onClick={() => scroll('left')}
